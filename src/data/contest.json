@@ -1,0 +1,122 @@
+{
+  "updated": "2026-08",
+  "note": "题目名称与题型标签整理自公开资料，如有出入以官方赛题 PDF 为准；E/F 题（专科组）部分年份题名未收录。",
+  "official": "https://www.mcm.edu.cn/html_cn/block/8579f5fce999cdc896f78bca5d4f8237.html",
+  "papersChannel": "https://dxs.moe.gov.cn/zx/hd/sxjm/sxjmlw/qkt_sxjm_lw_lwzs.shtml",
+  "years": [
+    {
+      "year": 2025,
+      "url": "https://www.mcm.edu.cn/upload_cn/node/759/SvpohSGacdffe718bcaa3b6e835c03ae3461cab1.zip",
+      "problems": [
+        { "label": "A", "title": "", "group": "本科", "types": [] },
+        { "label": "B", "title": "", "group": "本科", "types": [] },
+        { "label": "C", "title": "", "group": "本专科", "types": [] },
+        { "label": "D", "title": "", "group": "本专科", "types": [] },
+        { "label": "E", "title": "", "group": "专科", "types": [] },
+        { "label": "F", "title": "", "group": "专科", "types": [] }
+      ]
+    },
+    {
+      "year": 2024,
+      "url": "https://www.mcm.edu.cn/upload_cn/node/725/pmkWxf8H9cfe9984c1a1a5b1263e5dd3b5596ed5.zip",
+      "problems": [
+        { "label": "A", "title": "钢板最优切割路径问题", "group": "本科", "types": ["优化"] },
+        { "label": "B", "title": "生产过程中的决策问题", "group": "本科", "types": ["决策", "优化"] },
+        { "label": "C", "title": "农作物的种植策略", "group": "本专科", "types": ["优化", "决策"] },
+        { "label": "D", "title": "反潜航空深弹命中概率问题", "group": "本专科", "types": ["概率", "优化"] },
+        { "label": "E", "title": "交通流量管控", "group": "专科", "types": ["预测", "优化"] },
+        { "label": "F", "title": "数据驱动的地形三维建模", "group": "专科", "types": ["图像处理", "统计"] }
+      ]
+    },
+    {
+      "year": 2023,
+      "url": "https://www.mcm.edu.cn/upload_cn/node/690/Y20WPner9fa62862794e6dc82731a5561ce1132f.rar",
+      "problems": [
+        { "label": "A", "title": "定日镜场的优化设计", "group": "本科", "types": ["优化"] },
+        { "label": "B", "title": "多波束测线问题", "group": "本科", "types": ["优化", "规划"] },
+        { "label": "C", "title": "蔬菜类商品的自动定价与补货决策", "group": "本专科", "types": ["预测", "优化"] },
+        { "label": "D", "title": "圈养湖羊的空间利用率", "group": "本专科", "types": ["优化", "规划"] },
+        { "label": "E", "title": "黄河水沙监测数据分析", "group": "专科", "types": ["统计", "预测"] },
+        { "label": "F", "title": "", "group": "专科", "types": [] }
+      ]
+    },
+    {
+      "year": 2022,
+      "url": "https://www.mcm.edu.cn/upload_cn/node/670/5eWlbmTt28f88a0815a79d555da8b7072f971633.rar",
+      "problems": [
+        { "label": "A", "title": "波浪能最大输出功率设计", "group": "本科", "types": ["优化", "物理模型"] },
+        { "label": "B", "title": "无人机遂行编队飞行中的纯方位无源定位", "group": "本科", "types": ["几何", "优化"] },
+        { "label": "C", "title": "古代玻璃制品的成分分析与鉴别", "group": "本专科", "types": ["分类", "统计"] },
+        { "label": "D", "title": "气象报文信息卫星通信传输", "group": "本专科", "types": ["优化", "决策"] },
+        { "label": "E", "title": "小批量物料的生产安排", "group": "专科", "types": ["优化", "规划"] },
+        { "label": "F", "title": "", "group": "专科", "types": [] }
+      ]
+    },
+    {
+      "year": 2021,
+      "url": "https://www.mcm.edu.cn/upload_cn/node/669/HtbJEt9Nb655e46bebfa2a66ec63f940e2da156b.rar",
+      "problems": [
+        { "label": "A", "title": "“FAST”主动反射面的形状调节", "group": "本科", "types": ["优化", "几何"] },
+        { "label": "B", "title": "乙醇偶合制备C4烯烃", "group": "本科", "types": ["统计", "预测"] },
+        { "label": "C", "title": "生产企业原材料的订购与运输", "group": "本专科", "types": ["优化", "决策"] },
+        { "label": "D", "title": "", "group": "本专科", "types": [] },
+        { "label": "E", "title": "", "group": "专科", "types": [] },
+        { "label": "F", "title": "", "group": "专科", "types": [] }
+      ]
+    },
+    {
+      "year": 2020,
+      "url": "https://www.mcm.edu.cn/upload_cn/node/585/05k6B8WT92d3955f5c5e95dd086e59163e5f584b.rar",
+      "problems": [
+        { "label": "A", "title": "炉温曲线", "group": "本科", "types": ["物理模型", "优化"] },
+        { "label": "B", "title": "穿越沙漠", "group": "本科", "types": ["规划", "决策"] },
+        { "label": "C", "title": "中小微企业的信贷决策", "group": "本专科", "types": ["决策", "统计"] },
+        { "label": "D", "title": "", "group": "本专科", "types": [] },
+        { "label": "E", "title": "校园供水系统智能管理", "group": "专科", "types": ["优化", "预测"] },
+        { "label": "F", "title": "", "group": "专科", "types": [] }
+      ]
+    },
+    {
+      "year": 2019,
+      "url": "https://www.mcm.edu.cn/upload_cn/node/541/TSIsGxZuf258d48a22a7c7e628cd90482e1c25a2.rar",
+      "problems": [
+        { "label": "A", "title": "高压油管的压力控制", "group": "本科", "types": ["物理模型", "优化"] },
+        { "label": "B", "title": "“同心鼓”颠球", "group": "本科", "types": ["物理模型", "优化"] },
+        { "label": "C", "title": "机场的出租车问题", "group": "本专科", "types": ["决策", "优化"] },
+        { "label": "D", "title": "空气质量数据的校准", "group": "本专科", "types": ["统计", "预测"] },
+        { "label": "E", "title": "“薄利多销”分析", "group": "专科", "types": ["统计", "决策"] },
+        { "label": "F", "title": "", "group": "专科", "types": [] }
+      ]
+    },
+    {
+      "year": 2018,
+      "url": "https://www.mcm.edu.cn/upload_cn/node/494/lcGi8NeCd14458641de55ec1d705ea01714ff2dd.rar",
+      "problems": [
+        { "label": "A", "title": "高温作业专用服装设计", "group": "本科", "types": ["物理模型", "优化"] },
+        { "label": "B", "title": "智能RGV的动态调度策略", "group": "本科", "types": ["优化", "规划"] },
+        { "label": "C", "title": "大型百货商场会员画像描绘", "group": "专科", "types": ["分类", "统计"] },
+        { "label": "D", "title": "汽车总装线的配置问题", "group": "专科", "types": ["规划", "优化"] }
+      ]
+    },
+    {
+      "year": 2017,
+      "url": "https://www.mcm.edu.cn/upload_cn/node/437/IqAO5Qqi8f23d8738a07a0604b8629ce9bb061ad.rar",
+      "problems": [
+        { "label": "A", "title": "CT系统参数标定及成像", "group": "本科", "types": ["图像处理"] },
+        { "label": "B", "title": "“拍照赚钱”的任务定价", "group": "本科", "types": ["优化", "决策"] },
+        { "label": "C", "title": "颜色与物质浓度辨识", "group": "专科", "types": ["统计", "预测"] },
+        { "label": "D", "title": "巡检线路的排班", "group": "专科", "types": ["规划", "优化"] }
+      ]
+    },
+    {
+      "year": 2016,
+      "url": "https://www.mcm.edu.cn/upload_cn/node/393/UxYMjfW4fd0a5cd7a21951b49232088d2af3f4e8.rar",
+      "problems": [
+        { "label": "A", "title": "系泊系统的设计", "group": "本科", "types": ["物理模型", "优化"] },
+        { "label": "B", "title": "小区开放对道路通行的影响", "group": "本科", "types": ["统计", "评价"] },
+        { "label": "C", "title": "电池剩余放电时间预测", "group": "专科", "types": ["预测", "统计"] },
+        { "label": "D", "title": "风电场运行状况分析及优化", "group": "专科", "types": ["优化", "统计"] }
+      ]
+    }
+  ]
+}
