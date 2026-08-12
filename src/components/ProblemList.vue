@@ -90,7 +90,8 @@ const totalCount = computed(() => contest.years.reduce((n, y) => n + y.problems.
           <span v-for="t in p.types" :key="t" class="type-tag">{{ t }}</span>
         </div>
         <div class="card-actions">
-          <a class="btn-link" :href="p.yearUrl" target="_blank" rel="noopener">📥 官方赛题下载</a>
+          <a v-if="p.pdf" class="btn-link" :href="p.pdf" target="_blank" rel="noopener">📖 在线查看题目</a>
+          <a class="btn-link ghost" :href="p.yearUrl" target="_blank" rel="noopener">📥 官方赛题下载</a>
           <a class="btn-link ghost" :href="contest.papersChannel" target="_blank" rel="noopener">📄 优秀论文</a>
         </div>
       </article>
