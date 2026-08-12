@@ -2,8 +2,9 @@
 import { ref } from 'vue'
 import ProblemList from './components/ProblemList.vue'
 import TemplatePage from './components/TemplatePage.vue'
+import PromptGenerator from './components/PromptGenerator.vue'
 
-// 当前页面：problems（真题库）/ template（论文模板）
+// 当前页面：problems（真题库）/ template（论文模板）/ prompt（AI 提示词）
 const currentPage = ref('problems')
 </script>
 
@@ -16,6 +17,9 @@ const currentPage = ref('problems')
         <button :class="{ active: currentPage === 'problems' }" @click="currentPage = 'problems'">
           📚 真题库
         </button>
+        <button :class="{ active: currentPage === 'prompt' }" @click="currentPage = 'prompt'">
+          🤖 AI 提示词
+        </button>
         <button :class="{ active: currentPage === 'template' }" @click="currentPage = 'template'">
           📄 论文模板
         </button>
@@ -24,9 +28,10 @@ const currentPage = ref('problems')
 
     <main class="main">
       <ProblemList v-if="currentPage === 'problems'" />
+      <PromptGenerator v-else-if="currentPage === 'prompt'" />
       <TemplatePage v-else />
     </main>
 
-    <footer class="site-footer">数模助手 v1.0 · 数据来源：全国大学生数学建模竞赛官网（mcm.edu.cn）</footer>
+    <footer class="site-footer">数模助手 v2.0 · 数据来源：全国大学生数学建模竞赛官网（mcm.edu.cn）</footer>
   </div>
 </template>
