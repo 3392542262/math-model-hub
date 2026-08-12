@@ -185,11 +185,6 @@ async function copyPrompt() {
           <span>DeepSeek API Key{{ apiKey ? ' ✅ 已保存' : '' }}（可选）</span>
           <input v-model="apiKey" type="password" :placeholder="apiKey ? '已保存，可重新输入更换' : 'sk-…'" @change="saveKey">
         </label>
-        <p class="hint">
-          填 key 后点「🤖 AI 精准识别」：大模型真正读懂题目，识别最准（推荐）。
-          key 只保存在<em>你自己的浏览器</em>（localStorage），不会写入代码。
-        </p>
-        <p class="hint">申请教程：① 打开 <a href="https://platform.deepseek.com" target="_blank" rel="noopener">platform.deepseek.com</a> 注册登录 → ② 左侧「API Keys」→ 创建并复制 <code>sk-…</code> → ③ 粘贴到上方输入框。新用户有赠送额度，识别一次约几分钱。不填 key 也能用免费的关键词/贝叶斯识别。</p>
       </div>
 
       <!-- 识别结果 -->
