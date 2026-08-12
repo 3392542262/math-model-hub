@@ -5,18 +5,32 @@
       <p>
         <b>cumcmthesis</b> 是为全国大学生数学建模竞赛设计的开源 LaTeX 论文模板，符合国赛论文格式规范，
         自动处理目录、章节编号、公式与参考文献排版，是书写正式参赛论文的主流方案。
-        你的本地 <code>D:\latex1\国赛模板</code> 就是这套模板（含示例论文）。
       </p>
+      <a class="btn-download" href="./template/cumcmthesis.zip" download>📦 下载论文模板（zip）</a>
+      <p class="note">模板含：cumcmthesis.cls（格式核心）、example.tex（示例论文，从这里开始写）、example.pdf（成品参考）、figures/（插图示例）</p>
     </div>
 
     <div class="tpl-card">
-      <h3>🚀 快速上手</h3>
-      <ol class="steps">
-        <li><b>安装 TeX 发行版</b>：Windows 推荐 <a href="https://tug.org/texlive/" target="_blank" rel="noopener">TeX Live</a> 或 <a href="https://miktex.org/" target="_blank" rel="noopener">MiKTeX</a>（约 2~4 GB，安装时间较长）</li>
-        <li><b>准备模板</b>：使用本地 <code>D:\latex1\国赛模板</code>，或用开源仓库中的最新版</li>
-        <li><b>编辑论文</b>：在 <code>example.tex</code> 中按章节填写内容（摘要、问题重述、模型假设、模型建立与求解、模型检验、结论）</li>
-        <li><b>编译</b>：命令行执行 <code>xelatex example.tex</code>（两遍以生成目录），或使用 VS Code + LaTeX Workshop 一键编译</li>
-      </ol>
+      <h3>🚀 使用教程（选一种）</h3>
+
+      <div class="way">
+        <h4>方式一（推荐，不用装软件）：Overleaf 在线编译</h4>
+        <ol class="steps">
+          <li>打开 <a href="https://www.overleaf.com" target="_blank" rel="noopener">overleaf.com</a> 注册登录（免费）</li>
+          <li>点 <b>New Project → Upload Project</b>，上传刚下载的 <code>cumcmthesis.zip</code></li>
+          <li>在左侧编辑 <code>example.tex</code>（把示例内容替换成你的论文）</li>
+          <li>点 <b>Recompile</b>，右侧自动生成 PDF，点 <b>Download PDF</b> 下载</li>
+        </ol>
+      </div>
+
+      <div class="way">
+        <h4>方式二：本地安装 TeX 发行版（电脑上编译）</h4>
+        <ol class="steps">
+          <li>下载安装 <a href="https://tug.org/texlive/" target="_blank" rel="noopener">TeX Live</a>（约 2~4 GB，时间较长）或 <a href="https://miktex.org/" target="_blank" rel="noopener">MiKTeX</a>（按需自动装包，较轻量）</li>
+          <li>解压模板 zip，用 VS Code 安装「LaTeX Workshop」插件打开 <code>example.tex</code></li>
+          <li>点右上角绿色 ▶ 一键编译，或命令行执行 <code>xelatex example.tex</code>（两遍生成目录）</li>
+        </ol>
+      </div>
     </div>
 
     <div class="tpl-card">
@@ -46,8 +60,9 @@
     </div>
 
     <div class="tpl-card">
-      <h3>🔗 有用链接</h3>
+      <h3>🔗 相关资源</h3>
       <ul class="links">
+        <li><a href="https://github.com/latexstudio/CUMCMThesis" target="_blank" rel="noopener">模板开源仓库 latexstudio/CUMCMThesis（GitHub，已适配 2023 格式）</a></li>
         <li><a href="https://www.mcm.edu.cn/html_cn/node/b5ab480af29da69a4806e51e714b3de4.html" target="_blank" rel="noopener">国赛论文格式规范（官网，2023 年修订稿）</a></li>
         <li><a href="https://cumcm.cnki.net" target="_blank" rel="noopener">中国知网 · 数学建模竞赛频道（报名与论文提交）</a></li>
         <li><a href="https://dxs.moe.gov.cn/zx/hd/sxjm/sxjmlw/qkt_sxjm_lw_lwzs.shtml" target="_blank" rel="noopener">中国大学生在线 · 优秀论文展示</a></li>
@@ -68,9 +83,28 @@
 
 .tpl-card h2 { color: #12356b; font-size: 1.2rem; margin-bottom: 8px; }
 .tpl-card h3 { color: #1d5fd6; font-size: 1.02rem; margin-bottom: 10px; }
+.tpl-card h4 { color: #3a4c68; font-size: 0.95rem; margin: 4px 0 8px; }
 .tpl-card p, .tpl-card li { color: #3a4c68; font-size: 0.93rem; }
 .tpl-card code { background: #f0f4fb; color: #c23850; padding: 1px 6px; border-radius: 5px; font-size: 0.88rem; }
 .tpl-card a { color: #1d5fd6; }
+
+.btn-download {
+  display: inline-block;
+  margin: 12px 0 8px;
+  padding: 12px 28px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #1d5fd6, #12356b);
+  color: #fff !important;
+  font-size: 1.02rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(18, 53, 107, 0.3);
+}
+.btn-download:hover { filter: brightness(1.12); }
+
+.note { color: #8494ad !important; font-size: 0.8rem !important; }
+
+.way { margin-bottom: 14px; padding: 12px; background: #f7fafd; border-radius: 10px; }
 
 .steps { padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
 
