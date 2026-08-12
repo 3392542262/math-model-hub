@@ -19,7 +19,7 @@
 
 ## 在线体验
 
-**https://3392542262.github.io/<仓库名>/**
+**[点我打开 → https://3392542262.github.io/math-model-hub/](https://3392542262.github.io/math-model-hub/)**
 
 ## 本地开发
 
