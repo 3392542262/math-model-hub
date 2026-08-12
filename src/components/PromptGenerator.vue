@@ -49,10 +49,34 @@ function saveKey() {
   localStorage.setItem('mmh_api_key', apiKey.value.trim())
 }
 
+const AI_SYSTEM_PROMPT = `你是全国大学生数学建模竞赛（CUMCM）资深指导专家，负责分析题目并进行题型分类。
+
+【题型判定标准（结合真题示例）】
+- 优化：追求成本最小/收益最大/路径最优等，如"钢板最优切割路径问题""定日镜场的优化设计"→ 优化
+- 预测：基于历史数据推断未来，如"销量趋势预测""炉温曲线反演"→ 预测
+- 评价：多对象综合评价排序，如"宜居城市综合评价"→ 评价
+- 决策：方案选择/策略制定，如"生产过程中的决策问题""信贷决策"→ 决策
+- 统计：数据分析/回归/显著性，如"黄河水沙监测数据分析"→ 统计
+- 分类：对象鉴别/聚类，如"古代玻璃制品成分鉴别"→ 分类
+- 规划：排班/路径/选址/调度，如"巡检线路排班""多波束测线"→ 规划
+- 概率：随机性/命中概率/可靠性，如"反潜深弹命中概率"→ 概率
+- 图像处理：图像/点云/三维重建，如"CT成像""地形三维建模"→ 图像处理
+- 物理模型：物理机理建模（温度/压力/力学/能量），如"高压油管压力控制"→ 物理模型
+- 几何：坐标/定位/角度/轨迹，如"无人机无源定位"→ 几何
+
+【任务】分析用户给出的题目：
+1. 判定 1-3 个最贴合的题型（必须从上述 11 类中选择）
+2. 简述判定理由（30 字内）
+3. 各推荐 1-2 个稳妥模型和冲分模型（针对本题具体场景，不要空泛）
+4. 生成一段可直接复制给 AI 使用的完整提示词（包含：角色设定、题目信息、作答要求、六步作答结构：问题分析/模型推荐/模型建立/代码实现/结果分析/论文框架）
+
+【输出要求】只输出一个 JSON 对象，不要任何多余文字、不要代码块标记，格式：
+{"types":["题型1","题型2"],"reason":"判定理由","stable":[{"name":"稳妥模型","why":"适用理由"}],"high":[{"name":"冲分模型","why":"适用理由"}],"prompt":"完整AI提示词"}`
+
 async function aiAnalyze() {
   const key = apiKey.value.trim()
   const text = problemText.value.trim()
-  if (!key) { alert('请先在上方填写 DeepSeek API Key'); return }
+  if (!key) { alert('请先在上方填写 DeepSeek API Key（申请方法见下方提示）'); return }
   if (!text) { alert('请先粘贴题目内容'); return }
   aiLoading.value = true
   aiUsed.value = false
@@ -63,12 +87,9 @@ async function aiAnalyze() {
       headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${key}` },
       body: JSON.stringify({
         model: 'deepseek-chat',
-        temperature: 0.6,
+        temperature: 0.3,
         messages: [
-          {
-            role: 'system',
-            content: '你是全国大学生数学建模竞赛（CUMCM）资深指导专家。请分析用户给出的题目，只输出一个 JSON 对象（不要任何多余文字、不要代码块标记），格式：{"types":["题型1","题型2"],"reason":"题型识别理由（30字内）","stable":[{"name":"稳妥模型","why":"理由"}],"high":[{"name":"冲分模型","why":"理由"}],"prompt":"一段完整的AI提示词，包含角色设定、题目信息、作答要求，可直接复制给AI使用"}。题型只能从以下选择：评价、预测、优化、决策、统计、分类、规划、概率、图像处理、物理模型、几何。',
-          },
+          { role: 'system', content: AI_SYSTEM_PROMPT },
           { role: 'user', content: text },
         ],
       }),
@@ -148,7 +169,7 @@ async function copyPrompt() {
       <div class="row">
         <button class="btn primary" @click="analyze">🔍 分析题型</button>
         <button class="btn ai" :disabled="aiLoading" @click="aiAnalyze">
-          {{ aiLoading ? '⏳ AI 分析中…' : '🤖 AI 深度分析' }}
+          {{ aiLoading ? '⏳ AI 识别中…' : '🤖 AI 精准识别' }}
         </button>
         <label class="field inline">
           <span>作答要求</span>
@@ -161,13 +182,14 @@ async function copyPrompt() {
       <!-- API Key（存本浏览器） -->
       <div class="api-box">
         <label class="field inline grow">
-          <span>DeepSeek API Key（可选）</span>
-          <input v-model="apiKey" type="password" placeholder="sk-…" @change="saveKey">
+          <span>DeepSeek API Key{{ apiKey ? ' ✅ 已保存' : '' }}（可选）</span>
+          <input v-model="apiKey" type="password" :placeholder="apiKey ? '已保存，可重新输入更换' : 'sk-…'" @change="saveKey">
         </label>
         <p class="hint">
-          仅用于「AI 深度分析」。key 只保存在<em>你自己的浏览器</em>（localStorage），不会写入代码。
-          申请：platform.deepseek.com → API Keys。不填也能用免费的关键词识别。
+          填 key 后点「🤖 AI 精准识别」：大模型真正读懂题目，识别最准（推荐）。
+          key 只保存在<em>你自己的浏览器</em>（localStorage），不会写入代码。
         </p>
+        <p class="hint">申请教程：① 打开 <a href="https://platform.deepseek.com" target="_blank" rel="noopener">platform.deepseek.com</a> 注册登录 → ② 左侧「API Keys」→ 创建并复制 <code>sk-…</code> → ③ 粘贴到上方输入框。新用户有赠送额度，识别一次约几分钱。不填 key 也能用免费的关键词/贝叶斯识别。</p>
       </div>
 
       <!-- 识别结果 -->
