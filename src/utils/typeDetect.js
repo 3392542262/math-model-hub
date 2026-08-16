@@ -44,7 +44,9 @@ export function detectTypes(text) {
     }
   }
 
+  // 类型数量上限（防止关键词重叠导致类型泛滥，最多取 3 个最贴合的）
   return [...hitsByType.entries()]
     .map(([type, set]) => ({ type, hits: [...set], count: hitStrength.get(type) }))
     .sort((a, b) => b.count - a.count)
+    .slice(0, 3)
 }

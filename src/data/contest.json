@@ -10,9 +10,12 @@
       "problems": [
         {
           "label": "A",
-          "title": "",
+          "title": "烟幕干扰弹的投放策略",
           "group": "本科",
-          "types": [],
+          "types": [
+            "优化",
+            "物理模型"
+          ],
           "pdf": "./problems/2025/A.pdf"
         },
         {
